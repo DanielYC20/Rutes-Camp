@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+<html lang="cat">
+    <head>
+        <meta charset="UTF-8">
+		<title>Rutes del Camp</title>
+		<link rel="stylesheet" href="aspecte/estil.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+<body>
+<div>
+		 <header>
+				<a href="Inici.html"><img class="logo" src="logo/logo.png"></a>
+				<h1>RUTES DEL CAMP</h1>
+				<nav>
+					<a href="Inici.html">Inici</a>
+					<a href="Bicicleta.html">En Bicicleta</a>
+					<a href="Peu.html">A Peu</a>
+					<a href="Temps.html">El Temps</a>
+					<a href="Contacta.html">Contacta</a>
+				</nav>
+		 </header>
+		</div>	
+
+<section class="columna1">
+<h2>Ens trobaràs a:</h2>
+<style>
+  #map {
+    height: 460px;
+    width: 100%;
+  }
+</style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+	
+	var map = L.map("map", {center: [41.1024, 1.1477], zoom: 14});
+	
+		L.tileLayer(
+          "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", 
+          {attribution: '&copy; <a href="http://' + 
+          'www.openstreetmap.org/copyright">OpenStreetMap</a>'}
+		).addTo(map);
+	var marker = L.marker([41.1024, 1.1477]).addTo(map);
+	marker.bindPopup("<b>Ubicació:</b><br>Facultat de Turisme i Geografia").openPopup();
+</script>
+</section>
+
+<section class="columna2">
+  <form action="action_page.php">
+
+    <label for="fname">Nom</label>
+    <input type="text" id="fname" name="firstname" placeholder="El teu nom...">
+
+    <label for="lname">Cognoms</label>
+    <input type="text" id="lname" name="lastname" placeholder="Els teus cognoms...">
+
+    <label for="country">Des de quina província ens parles?</label>
+    <select id="country" name="country">
+      <option value="barcelona">Barcelona</option>
+      <option value="girona">Girona</option>
+      <option value="lleida">Lleida</option>
+	  <option value="tarragona">Tarragona</option>
+    </select>
+
+    <label for="subject">Tens alguna suggerència, necessites ajuda?</label>
+    <textarea id="subject" name="subject" placeholder="Volem saber què penses..." style="height:200px"></textarea>
+
+    <input type="submit" value="Envia">
+
+  </form>
+</section>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="aspecte/script.js"></script>
+			<footer>
+				<link rel="stylesheet"  href="http://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+				<h3> Xarxes Socials </h3>
+				<div class="xarxes">
+					<ul>
+						<li> <a href="https://twitter.com/danitonski"><i class="fab fa-twitter"></i></a></li>
+						<li> <a href="https://www.instagram.com/daniel_yeste"><i class="fab fa-instagram"></i></a></li>
+						<li> <a href="https://www.strava.com/athletes/84443489"><i class="fab fa-strava"></i></a></li>
+					</ul>
+				</div>
+				<p>© Daniel Yeste, 2021 | All Rights Reserved</p>
+			</footer>
+</body>
+</html>
